@@ -110,12 +110,18 @@
 
     // TODO: register event onkeypress / addEventListener untuk input
     // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
-    const fungsiKeypress = (event) => {
-      if (event.keyCode === 13) {
+
+    input.addEventListener("keypress", (event) => {
+      if (event.keyCode === 13)
         fnClickHandler(input.value)
-      }
-    }
-    document.addEventListener('keypress', fungsiKeypress);
+    })
+
+    // const fungsiKeypress = (event) => {
+    //   if (event.keyCode === 13) {
+    //     fnClickHandler(input.value)
+    //   }
+    // }
+    // document.addEventListener('keypress', fungsiKeypress);
   </script>
 </body>
 
