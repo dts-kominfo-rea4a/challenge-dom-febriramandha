@@ -96,7 +96,6 @@
     // Jangan ubah cara deklarasi fungsinya, cukup isi saja
     function fnClickHandler(toDoItem) {
       let list = document.createElement('li');
-      // list.appendChild(document.createTextNode(toDoItem));
       list.innerHTML = toDoItem;
       output.append(list);
       input.value = "";
@@ -112,7 +111,7 @@
     // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
 
     input.addEventListener("keypress", (event) => {
-      if (event.keyCode === 13)
+      if (event.key === "Enter")
         fnClickHandler(input.value)
     })
 
