@@ -110,12 +110,12 @@
     // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
     input.addEventListener('keypress', function (event) {
       if (event.keyCode === 13) {
-        let inputValue = input.value;
-        let li = document.createElement('li');
-        var toDoItem = document.createTextNode(inputValue);
-        li.appendChild(toDoItem);
-        output.append(li);
-        document.getElementById("todo-input").value = "";
+        // let inputValue = input.value;
+        // let li = document.createElement('li');
+        // var toDoItem = document.createTextNode(inputValue);
+        // li.appendChild(toDoItem);
+        fnClickHandler();
+        // document.getElementById("todo-input").value = "";
       }
     })
   </script>
