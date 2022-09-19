@@ -74,13 +74,14 @@
 
     <!-- Section: input -->
     <!-- TODO: Buatlah sebuah input bertipe text dengan id todo-input -->
-    <input type="text" id="todo-input" placeholder="Type here...">
+    <input type="text" id="todo-input" placeholder="Type here..." autocomplete="off">
     <!-- TODO: Buatlah sebuah button dengan id todo-submit -->
     <button id="todo-submit">Submit</button>
     <!-- Section output -->
     <!-- TODO: Buatlah sebuah <ul> dengan id todo-output -->
     <ul id="todo-output">
     </ul>
+
   </div>
 
   <!-- ! Untuk tantangan ini, script jangan diubah ke external js yah ! -->
@@ -94,30 +95,26 @@
     // Fungsi yang digunakan untuk menambahkan tulisan
     // Jangan ubah cara deklarasi fungsinya, cukup isi saja
     function fnClickHandler(toDoItem) {
-      let inputValue = input.value;
-      let li = document.createElement('li');
-      var toDoItem = document.createTextNode(inputValue);
-      li.appendChild(toDoItem);
-      output.append(li);
-      document.getElementById("todo-input").value = "";
+      let list = document.createElement('li');
+      list.appendChild(document.createTextNode(toDoItem));
+      output.append(list);
+      input.value = "";
     }
 
     // TODO: register event onclick / addEventListener untuk button
     // akan menjalankan fungsi fnClickHandler
-    button.addEventListener('click', fnClickHandler);
+    button.addEventListener('click', () => {
+      fnClickHandler(input.value)
+    });
 
     // TODO: register event onkeypress / addEventListener untuk input
     // sehingga saat di input ditekan enter akan menjalankan fungsi fnClickHandler juga
-    input.addEventListener('keypress', function (event) {
+    const fungsiKeypress = (event) => {
       if (event.keyCode === 13) {
-        // let inputValue = input.value;
-        // let li = document.createElement('li');
-        // var toDoItem = document.createTextNode(inputValue);
-        // li.appendChild(toDoItem);
-        fnClickHandler();
-        // document.getElementById("todo-input").value = "";
+        fnClickHandler(input.value)
       }
-    })
+    }
+    document.addEventListener('keypress', fungsiKeypress);
   </script>
 </body>
 
