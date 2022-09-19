@@ -96,7 +96,8 @@
     // Jangan ubah cara deklarasi fungsinya, cukup isi saja
     function fnClickHandler(toDoItem) {
       let list = document.createElement('li');
-      list.appendChild(document.createTextNode(toDoItem));
+      // list.appendChild(document.createTextNode(toDoItem));
+      list.innerHTML = toDoItem;
       output.append(list);
       input.value = "";
     }
